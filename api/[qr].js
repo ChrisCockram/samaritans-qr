@@ -1,5 +1,5 @@
 const { Canvas, Image } = require("@napi-rs/canvas");
-const QRCode = require('easyqrcodejs-nodejs');
+//const QRCode = require('easyqrcodejs-nodejs');
 //const mergeImages = require('merge-images');
 //const { Canvas, Image } = require('canvas');
 //const { v4: uuidv4 } = require('uuid');

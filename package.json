@@ -10,12 +10,9 @@
   "author": "@ChrisCockram",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.6.1",
     "easyqrcodejs-nodejs": "^4.4.2",
     "express": "^4.17.1",
     "merge-images": "^2.0.0",
-    "uuid": "^8.3.2",
-    "@napi-rs/canvas": "~0.1.15",
-    "skia-canvas": "~0.9.27"
+    "@napi-rs/canvas": "~0.1.15"
   }
 }

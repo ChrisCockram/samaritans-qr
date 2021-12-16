@@ -1,4 +1,5 @@
-const { Canvas, Image } = require('../canvas');
+//const { Canvas, Image } = require('canvas');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = (req, res) => {  
     res.send('Ahhh');

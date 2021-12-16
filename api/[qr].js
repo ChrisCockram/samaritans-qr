@@ -12,11 +12,22 @@ if (
   }
 
 
-const { Canvas, Image } = require('canvas');
+//const { Canvas, Image } = require('canvas');
 
 
 module.exports = (req, res) => {
-    res.send("Hello");
+
+
+    const testFolder = './tests/';
+    const fs = require('fs');
+    let list = []
+    fs.readdirSync(testFolder).forEach(file => {
+        list.push(file)
+        console.log(file);
+    });
+
+
+    res.send({list});
 };
 
 

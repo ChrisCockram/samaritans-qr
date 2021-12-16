@@ -22,8 +22,22 @@ const express = require('express');
 const app = express()
 const port = 3000
 
-app.use(express.static('public'))
 
+const testFolder = '../node_modules/canvas/build/Release';
+    const fs = require('fs');
+    let list = []
+    fs.readdirSync(testFolder).forEach(file => {
+        list.push(file)
+        console.log(file);
+    });
+
+
+
+
+app.get('/a', function (req, res) {
+  res.send(list)
+})
+app.use(express.static('public'))
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })

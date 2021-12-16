@@ -17,17 +17,8 @@ if (
 
 module.exports = (req, res) => {
 
-
-    const testFolder = '../node_modules/canvas/build/Release';
-    const fs = require('fs');
-    let list = []
-    fs.readdirSync(testFolder).forEach(file => {
-        list.push(file)
-        console.log(file);
-    });
-
-
-    res.send({list});
+    
+    res.send('Ahhh');
 };
 
 

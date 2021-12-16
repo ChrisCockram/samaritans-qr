@@ -1,7 +1,3 @@
-const QRCode = require('easyqrcodejs-nodejs');
-const mergeImages = require('merge-images');
-const { Canvas, Image } = require('canvas');
-const { v4: uuidv4 } = require('uuid');
 const express = require('express');
 
 const app = express()

@@ -55,15 +55,15 @@ function generateQr(url,bg='donate'){
 module.exports = (req, res) => {
 
     if (req.query.b64url == undefined) {
-        req.query.b64url = ''
+        res.send({"error":"URL not defined"})
+    }else{
+        let buff = new Buffer(req.query.b64url, 'base64');
+        let url = buff.toString('ascii');
+    
+        generateQr(url).then(b64=>{
+            let json={'b64':b64};
+            res.send(json)
+        });
     }
-
-    let buff = new Buffer(req.query.b64url, 'base64');
-    let url = buff.toString('ascii');
-
-    generateQr(url).then(b64=>{
-        let json={'b64':b64};
-        res.send(json)
-    });
 };
 

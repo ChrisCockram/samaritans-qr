@@ -1,8 +1,0 @@
-{
-  "routes": [
-    { 
-      "src": "/qr/(?<b64url>)",
-      "dest": "/qr/?b64url=$b64url"
-    }
-  ]
-}

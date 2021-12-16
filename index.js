@@ -8,6 +8,9 @@ if (
     process.env.LD_LIBRARY_PATH = `${
       process.env.PWD
     }/node_modules/canvas/build/Release:${process.env.LD_LIBRARY_PATH || ''}`;
+  }else{
+    console.log('found LD_LIBRARY_PATH on index')
+
   }
 
   const { Canvas, Image } = require('canvas');

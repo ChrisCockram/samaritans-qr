@@ -1,5 +1,5 @@
 //const { Canvas, Image } = require('canvas');
-const { v4: uuidv4 } = require('uuid');
+const QRCode = require('easyqrcodejs-nodejs');
 
 module.exports = (req, res) => {  
     res.send('Ahhh');

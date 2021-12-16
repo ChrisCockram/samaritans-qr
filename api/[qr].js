@@ -1,11 +1,9 @@
 const { Canvas, Image } = require("@napi-rs/canvas");
 const QRCode = require('easyqrcodejs-nodejs');
-const mergeImages = require('merge-images');
+//const mergeImages = require('merge-images');
 //const { Canvas, Image } = require('canvas');
 //const { v4: uuidv4 } = require('uuid');
-
-
-
+/*
 function generateQr(url,bg='donate'){
     return new Promise((resolve, reject) => {
         let uid = 'asd';
@@ -51,8 +49,6 @@ function generateQr(url,bg='donate'){
 
 }
 
-
-
 module.exports = (req, res) => {
 
     if (req.query.b64url == undefined) {
@@ -67,3 +63,4 @@ module.exports = (req, res) => {
         });
     }
 };
+*/

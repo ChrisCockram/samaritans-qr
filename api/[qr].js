@@ -3,22 +3,6 @@ const mergeImages = require('merge-images');
 const { Canvas, Image } = require('canvas');
 const { v4: uuidv4 } = require('uuid');
 
-module.exports = (req, res) => {
-
-    if (req.query.b64url == undefined) {
-        req.query.b64url = ''
-    }
-
-    let buff = new Buffer(req.query.b64url, 'base64');
-    let url = buff.toString('ascii');
-
-    generateQr(url).then(b64=>{
-        let json={'b64':b64};
-        res.send(json)
-    });
-};
-
-
 
 
 function generateQr(url,bg='donate'){
@@ -65,3 +49,21 @@ function generateQr(url,bg='donate'){
     });
 
 }
+
+
+
+module.exports = (req, res) => {
+
+    if (req.query.b64url == undefined) {
+        req.query.b64url = ''
+    }
+
+    let buff = new Buffer(req.query.b64url, 'base64');
+    let url = buff.toString('ascii');
+
+    generateQr(url).then(b64=>{
+        let json={'b64':b64};
+        res.send(json)
+    });
+};
+

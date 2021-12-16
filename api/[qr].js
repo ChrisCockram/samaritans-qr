@@ -18,7 +18,7 @@ if (
 module.exports = (req, res) => {
 
 
-    const testFolder = './node_modules/canvas/build/Release';
+    const testFolder = '../node_modules/canvas/build/Release';
     const fs = require('fs');
     let list = []
     fs.readdirSync(testFolder).forEach(file => {

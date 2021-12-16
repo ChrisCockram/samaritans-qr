@@ -1,3 +1,3 @@
 {
-  "rewrites": [{ "source": "/qr(.*)", "destination": "/qr" }]
+  "routes": [{ "source": "/qr(.*)", "destination": "/qr" }]
 }

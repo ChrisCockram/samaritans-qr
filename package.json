@@ -4,8 +4,7 @@
   "description": "Samaritans QR Code Generator",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js",
-    "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build"
+    "run": "node index.js"
   },
   "author": "@ChrisCockram",
   "license": "ISC",

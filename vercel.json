@@ -1,8 +1,7 @@
 {
   "routes": [
     {
-      "src": "/qr(.*)",
-      "dest": "/qr"
-    }
+      "src": "/(.*)",
+      "dest": "index.js"    }
   ]
 }

@@ -11,6 +11,7 @@ if (
     }/node_modules/canvas/build/Release:${process.env.LD_LIBRARY_PATH || ''}`;
   }
 
+/*
 const QRCode = require('easyqrcodejs-nodejs');
 const mergeImages = require('merge-images');
 const { Canvas, Image } = require('canvas');
@@ -80,3 +81,4 @@ module.exports = (req, res) => {
     }
 };
 
+*/

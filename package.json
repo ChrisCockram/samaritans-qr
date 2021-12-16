@@ -10,7 +10,7 @@
   "author": "@ChrisCockram",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.8.0",
+    "canvas": "^2.6.1",
     "easyqrcodejs-nodejs": "^4.4.2",
     "express": "^4.17.1",
     "merge-images": "^2.0.0",

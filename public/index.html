@@ -39,7 +39,7 @@
         function getQR(){
             let url = document.getElementById("url").value;
             url = btoa(url);
-            let json_obj = JSON.parse(get('/qr?b64url='+url));
+            let json_obj = JSON.parse(get('/api/qr?b64url='+url));
             document.getElementById("outputImage").src="data:image/png;base64,"+json_obj.b64;
             document.getElementById("downloadButton").disabled = false;
             b64=json_obj.b64;

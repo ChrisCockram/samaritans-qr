@@ -1,18 +1,7 @@
-// For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
-
 const { Canvas, Image } = require("@napi-rs/canvas");
-
-//const { Canvas, Image } = require('canvas');
-
-
-module.exports = (req, res) => {  
-    res.send('Ahhh');
-};
-
-/*
 const QRCode = require('easyqrcodejs-nodejs');
 const mergeImages = require('merge-images');
-const { Canvas, Image } = require('canvas');
+//const { Canvas, Image } = require('canvas');
 const { v4: uuidv4 } = require('uuid');
 
 
@@ -78,5 +67,3 @@ module.exports = (req, res) => {
         });
     }
 };
-
-*/

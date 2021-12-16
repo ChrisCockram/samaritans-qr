@@ -2,13 +2,13 @@ const { Canvas, Image } = require("@napi-rs/canvas");
 const QRCode = require('easyqrcodejs-nodejs');
 const mergeImages = require('merge-images');
 //const { Canvas, Image } = require('canvas');
-const { v4: uuidv4 } = require('uuid');
+//const { v4: uuidv4 } = require('uuid');
 
 
 
 function generateQr(url,bg='donate'){
     return new Promise((resolve, reject) => {
-        let uid = uuidv4();
+        let uid = 'asd';
         let tempFile = './temp/'+uid+'_temp.png'
         let w = 1000;
         // Options

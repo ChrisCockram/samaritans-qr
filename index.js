@@ -22,6 +22,11 @@ app.get('/qr/', async (req, res) => {
     });
 
 })
+
+app.get("/api/some/path", (req, res) => {
+    res.send("wow, it actually worked");
+});
+
 app.use(express.static('public'))
 
 

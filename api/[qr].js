@@ -1,6 +1,6 @@
-//const QRCode = require('easyqrcodejs-nodejs');
-//const mergeImages = require('merge-images');
-//const { Canvas, Image } = require('canvas');
+const QRCode = require('easyqrcodejs-nodejs');
+const mergeImages = require('merge-images');
+const { Canvas, Image } = require('canvas');
 const { v4: uuidv4 } = require('uuid');
 
 
@@ -27,25 +27,25 @@ function generateQr(url,bg='donate'){
         };
 
         // New instance with options
-        //let qrcode = new QRCode(options);
+        let qrcode = new QRCode(options);
 
         // Save QRCode image
-        //qrcode.saveImage({
-        //    path: tempFile
-        //}).then(data=>{
-        //    mergeImages([
-        //        { src: './bg/donate.png', x: 0, y: 0 },
-        //        { src: tempFile, x: 40, y: 40 }
-        //    ], {
-        //        Canvas: Canvas,
-        //        Image: Image
-        //    }).then(b64=>{
-        //            require("fs").unlink(tempFile,()=>{console.log('deleted')});
-        //            b64 = b64.replace(/^data:image\/png;base64,/, "");
-        //            return resolve(b64)
-        //        }
-        //    );
-        //});
+        qrcode.saveImage({
+            path: tempFile
+        }).then(data=>{
+            mergeImages([
+                { src: './bg/donate.png', x: 0, y: 0 },
+                { src: tempFile, x: 40, y: 40 }
+            ], {
+                Canvas: Canvas,
+                Image: Image
+            }).then(b64=>{
+                    require("fs").unlink(tempFile,()=>{console.log('deleted')});
+                    b64 = b64.replace(/^data:image\/png;base64,/, "");
+                    return resolve(b64)
+                }
+            );
+        });
     });
 
 }

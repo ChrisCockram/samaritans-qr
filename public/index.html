@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samaritans QR Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link type="text/css" rel="stylesheet" href="default.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Samaritans Donation QR Code Generator</h1>
+        <p>This app will generate Samaritans branded QR codes for linking to Enthuse donation pages.</p>
+        <div class="outputContainer">
+            <img id="outputImage" src="defaultqr.png">
+        </div>
+        <!--<button class="downloadButton" onclick="downloadFile()" id="downloadButton" disabled type="button"><i class="fas fa-download"></i> Download</button>-->
+        <br>
+        <input type="text" id="url" value="Link to donate page" />
+
+        <button type="button" onclick="getQR()" class="generateButton"><i class="fas fa-qrcode"></i> Make QR Code</button>
+    </div>
+    <script>
+        let b64=false;
+        function get(yourUrl){
+            let Httpreq = new XMLHttpRequest(); // a new request
+            Httpreq.open("GET",yourUrl,false);
+            Httpreq.send(null);
+            return Httpreq.responseText;
+        }
+
+        function getQR(){
+            let url = document.getElementById("url").value;
+            url = btoa(url);
+            let json_obj = JSON.parse(get('/qr?b64url='+url));
+            document.getElementById("outputImage").src="data:image/png;base64,"+json_obj.b64;
+            document.getElementById("downloadButton").disabled = false;
+            b64=json_obj.b64;
+        }
+        function downloadFile(){
+            if(b64){
+                document.location = 'data:image/png;base64,' + b64;
+            }
+        }
+    </script>
+</body>
+</html>

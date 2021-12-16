@@ -11,6 +11,7 @@ if (
   }
 
 
+const { Canvas, Image } = require('canvas');
 
 
 module.exports = (req, res) => {

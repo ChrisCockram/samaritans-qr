@@ -4,7 +4,6 @@ module.exports = (req, res) => {
     res.send('Ahhh');
 };
 
-
 /*
 const QRCode = require('easyqrcodejs-nodejs');
 const mergeImages = require('merge-images');

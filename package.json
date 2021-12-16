@@ -4,7 +4,8 @@
   "description": "Samaritans QR Code Generator",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js"
+    "run": "node index.js",
+    "now-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/"
   },
   "author": "@ChrisCockram",
   "license": "ISC",

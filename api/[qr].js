@@ -1,6 +1,6 @@
 // For building on vercel: https://github.com/Automattic/node-canvas/issues/1779
 
-const { createCanvas } = require("@napi-rs/canvas");
+const { Canvas, Image } = require("@napi-rs/canvas");
 
 //const { Canvas, Image } = require('canvas');
 

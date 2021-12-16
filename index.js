@@ -8,7 +8,7 @@ const express = require('express');
 const app = express()
 const port = 3000
 
-app.get('/qr', async (req, res) => {
+app.get('/qr/', async (req, res) => {
     if (req.query.b64url == undefined) {
         req.query.b64url = ''
     }

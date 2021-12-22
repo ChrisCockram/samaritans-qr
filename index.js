@@ -3,8 +3,9 @@ const { Canvas, Image } = require("canvas");
 const QRCode = require('easyqrcodejs-nodejs');
 const mergeImages = require('merge-images');
 const { v4: uuidv4 } = require('uuid');
+const fs = require('fs');
 
-var dir = './temp';
+let dir = './temp';
 
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);

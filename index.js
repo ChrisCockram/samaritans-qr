@@ -12,7 +12,7 @@ if (!fs.existsSync(dir)){
 }
 
 const app = express()
-const port = 3000
+const port = 80
 app.get('/api/qr',function (req, res) {
     if (req.query.b64url == undefined) {
         res.send({"error":"URL not defined"})

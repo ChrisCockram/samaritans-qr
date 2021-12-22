@@ -4,6 +4,12 @@ const QRCode = require('easyqrcodejs-nodejs');
 const mergeImages = require('merge-images');
 const { v4: uuidv4 } = require('uuid');
 
+var dir = './temp';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
+
 const app = express()
 const port = 3000
 app.get('/api/qr',function (req, res) {

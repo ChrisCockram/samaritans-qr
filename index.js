@@ -39,7 +39,7 @@ function generateQr(url,bg='donate'){
     return new Promise((resolve, reject) => {
         let uid = uuidv4();
         let tempFile = './temp/'+uid+'_temp.png'
-        let w = 1000;
+        let w = 990;
         // Options
         try {
             if(url.length>500){

@@ -22,6 +22,10 @@ app.get('/api/qr',function (req, res) {
         generateQr(url).then(b64=>{
             let json={'b64':b64};
             res.send(json)
+        }).catch(msg=>{
+            let json={'b64':false,'error':msg};
+            console.log(msg);
+            res.send(json)
         });
     }
 })
@@ -37,40 +41,50 @@ function generateQr(url,bg='donate'){
         let tempFile = './temp/'+uid+'_temp.png'
         let w = 1000;
         // Options
-        let options = {
-            width: w,
-            height: w,
-            text: url,
-            colorDark : "#8bbe29",
-            colorLight : "#115e67",
-            logo: "logo.png",
-            logoWidth: 340,
-            logoHeight: 340,
-            correctLevel : QRCode.CorrectLevel.H,
-            quietZone: 0,
-            quietZoneColor: "rgba(0,0,0,0)",
+        try {
+            if(url.length>500){
+                return reject('URL too long.');
+            }
 
-        };
+            let options = {
+                width: w,
+                height: w,
+                text: url,
+                colorDark: "#8bbe29",
+                colorLight: "#115e67",
+                logo: "logo.png",
+                logoWidth: 340,
+                logoHeight: 340,
+                correctLevel: QRCode.CorrectLevel.H,
+                quietZone: 0,
+                quietZoneColor: "rgba(0,0,0,0)",
 
-        // New instance with options
-        let qrcode = new QRCode(options);
+            };
 
-        // Save QRCode image
-        qrcode.saveImage({
-            path: tempFile
-        }).then(data=>{
-            mergeImages([
-                { src: './bg/donate.png', x: 0, y: 0 },
-                { src: tempFile, x: 40, y: 40 }
-            ], {
-                Canvas: Canvas,
-                Image: Image
-            }).then(b64=>{
-                    require("fs").unlink(tempFile,()=>{console.log('deleted')});
-                    b64 = b64.replace(/^data:image\/png;base64,/, "");
-                    return resolve(b64)
-                }
-            );
-        });
+            // New instance with options
+            let qrcode = new QRCode(options);
+
+            // Save QRCode image
+            qrcode.saveImage({
+                path: tempFile
+            }).then(data => {
+                mergeImages([
+                    {src: './bg/donate.png', x: 0, y: 0},
+                    {src: tempFile, x: 40, y: 40}
+                ], {
+                    Canvas: Canvas,
+                    Image: Image
+                }).then(b64 => {
+                        require("fs").unlink(tempFile, () => {
+                            console.log('deleted')
+                        });
+                        b64 = b64.replace(/^data:image\/png;base64,/, "");
+                        return resolve(b64)
+                    }
+                );
+            });
+        }catch (err){
+            return reject(err)
+        }
     });
 }

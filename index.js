@@ -70,7 +70,7 @@ function generateQr(url,bg='donate'){
             }).then(data => {
                 mergeImages([
                     {src: './bg/donate.png', x: 0, y: 0},
-                    {src: tempFile, x: 50, y: 40}
+                    {src: tempFile, x: 50, y: 50}
                 ], {
                     Canvas: Canvas,
                     Image: Image

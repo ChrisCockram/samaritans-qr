@@ -52,7 +52,7 @@ function generateQr(url,bg='donate'){
                 text: url,
                 colorDark: "#8bbe29",
                 colorLight: "#115e67",
-                logo: "logo.png",
+                //logo: "logo.png",
                 logoWidth: 340,
                 logoHeight: 340,
                 correctLevel: QRCode.CorrectLevel.H,
